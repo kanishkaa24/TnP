@@ -50,38 +50,454 @@
     {% for student in data %}
     <div
       class="card"
-      style="margin-left: 20vw; margin-right: 20vw; margin-top: 10vh"
+      style="
+        margin-left: 20vw;
+        margin-right: 20vw;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+      "
     >
       <h5 class="card-header" style="background-color: #0d6efd; color: #ffffff">
         {{ student.2 }}
       </h5>
       <div class="card-body">
-        <strong> Enrollment Number: </strong> {{student.0}} <br />
-        <strong> Branch: </strong> {{student.1}} <br />
-        <strong> Email: </strong> {{student.10}} <br />
-        <strong> Contact Number: </strong> {{student.8}} <br />
-        <strong> Gender: </strong> {{student.4}} <br />
-        <strong> Date of Birth: </strong> {{student.5}} <br />
-        <strong> Category: </strong> {{student.7}} <br />
-        <strong> Postal Address: </strong> {{student.6}} <br />
-        <strong> Xth Percentage: </strong> {{student.11}} <br />
-        <strong> XIIth Percentage: </strong> {{student.15}} <br />
-        <strong> Semester I Percentage: </strong> {{student.21}} <br />
-        <strong> Semester II Percentage: </strong> {{student.22}} <br />
-        <strong> Semester III Percentage: </strong> {{student.23}} <br />
-        <strong> Semester IV Percentage: </strong> {{student.24}} <br />
-        <strong> Pending Backlogs: </strong> {{student.31}} <br />
-        <strong> Placed at: </strong> TBD <br />
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Enrollment Number</label
+            >
+            <input
+              placeholder="{{student.0}}"
+              value="{{student.0}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Email ID</label>
+            <input
+              placeholder="{{student.10}}"
+              value="{{student.10}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Branch</label>
+            <input
+              placeholder="{{student.1}}"
+              value="{{student.1}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Contact Number</label
+            >
+            <input
+              placeholder="{{student.8}}"
+              value="{{student.8}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Alternate Number</label>
+            <input
+              placeholder="{{student.9}}"
+              value="{{student.9}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Date of Birth</label>
+            <input
+              placeholder="{{student.5}}"
+              value="{{student.5}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Gender</label>
+            <input
+              placeholder="{{student.4}}"
+              value="{{student.4}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Category</label>
+            <input
+              placeholder="{{student.7}}"
+              value="{{student.7}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Address</label>
+            <input
+              placeholder="{{student.6}}"
+              value="{{student.6}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputAddress"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Xth Percentage</label>
+            <input
+              placeholder="{{student.11}}"
+              value="{{student.11}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Xth CGPA</label>
+            <input
+              placeholder="{{student.12}}"
+              value="{{student.12}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Xth Passing Board</label
+            >
+            <input
+              placeholder="{{student.13}}"
+              value="{{student.13}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Year of Passing Xth</label
+            >
+            <input
+              placeholder="{{student.14}}"
+              value="{{student.14}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >XIIth Percentage</label
+            >
+            <input
+              placeholder="{{student.15}}"
+              value="{{student.15}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >XIIth Passing Board</label
+            >
+            <input
+              placeholder="{{student.16}}"
+              value="{{student.16}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Year of Passing XIIth</label
+            >
+            <input
+              placeholder="{{student.17}}"
+              value="{{student.17}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">CET Rank</label>
+            <input
+              placeholder="{{student.18}}"
+              value="{{student.18}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Percentage in Diploma</label
+            >
+            <input
+              placeholder="{{student.19}}"
+              value="{{student.19}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Year of Passing Diploma</label
+            >
+            <input
+              placeholder="{{student.20}}"
+              value="{{student.20}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Semester I Percentage</label
+            >
+            <input
+              placeholder="{{student.21}}"
+              value="{{student.21}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Semester II Percentage</label
+            >
+            <input
+              placeholder="{{student.22}}"
+              value="{{student.22}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label"
+              >Semester III Percentage</label
+            >
+            <input
+              placeholder="{{student.23}}"
+              value="{{student.23}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Semester IV Percentage</label
+            >
+            <input
+              placeholder="{{student.24}}"
+              value="{{student.24}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Semester V Percentage</label
+            >
+            <input
+              placeholder="{{student.25}}"
+              value="{{student.25}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Percentage till Semester V</label
+            >
+            <input
+              placeholder="{{student.26}}"
+              value="{{student.26}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Semester VI Percentage</label
+            >
+            <input
+              placeholder="{{student.27}}"
+              value="{{student.27}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Percentage till Semester VI</label
+            >
+            <input
+              placeholder="{{student.28}}"
+              value="{{student.28}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Semester VII Percentage</label
+            >
+            <input
+              placeholder="{{student.29}}"
+              value="{{student.29}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label"
+              >Percentage till Semester VII</label
+            >
+            <input
+              placeholder="{{student.30}}"
+              value="{{student.30}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Pending Backlogs</label>
+            <input
+              placeholder="{{student.31}}"
+              value="{{student.31}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Cleared Backlogs</label>
+            <input
+              placeholder="{{student.32}}"
+              value="{{student.32}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Eligibility</label>
+            <input
+              placeholder="{{student.33}}"
+              value="{{student.33}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Gap in studies</label>
+            <input
+              placeholder="{{student.34}}"
+              value="{{student.34}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+          <div class="col-12">
+            <label for="inputPassword4" class="form-label">Placed At</label>
+            <input
+              placeholder="{{student.35}}"
+              value="{{student.35}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputPassword4"
+            />
+          </div>
+          <div class="col-12">
+            <label for="inputEmail4" class="form-label">Remarks</label>
+            <input
+              placeholder="{{student.3}}"
+              value="{{student.3}}"
+              type="text"
+              disabled
+              class="form-control"
+              id="inputEmail4"
+            />
+          </div>
+        </form>
         <form method="get">
-          <button
-            class="btn btn-sm btn-primary"
-            name="rollid"
-            value="{{student.0}}"
-            type="submit"
-            style="margin-top: 10px"
-          >
-            Edit Details
-          </button>
+          <div class="col-12">
+            <button
+              class="btn btn-primary"
+              name="rollid"
+              value="{{student.0}}"
+              type="submit"
+              style="margin-top: 10px"
+            >
+              Edit Details
+            </button>
+          </div>
         </form>
       </div>
     </div>
