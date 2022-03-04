@@ -82,7 +82,10 @@ def studentprofile(request):
         cb = request.POST.get('cbacklog')
         eligible = request.POST.get('eligible')
         gap = request.POST.get('gap')
-        placed = request.POST.get('placed')
+        placed1 = request.POST.get('placed1')
+        placed2 = request.POST.get('placed2')
+        placed3 = request.POST.get('placed3')
+        placed4 = request.POST.get('placed4')
         remarks = request.POST.get('remarks')
         if name is not None and editname is None:
             with open('studentData.csv', encoding="utf8") as f:
@@ -93,7 +96,7 @@ def studentprofile(request):
                         list.append(line)
                 return render(request, 'profile.html', {'data': list}) 
         if editname is not None:
-            data = [enrollmentNum, branch, editname, remarks, gender, dob, address, category, contact, alternate, email, xp, xc, xb, xy, xiip, xiib, xiiy, cet, dpp, yod, sem1, sem2, sem3, sem4, sem5, semt5, sem6, semt6, sem7, semt7, pb, cb, eligible, gap, placed]
+            data = [enrollmentNum, branch, editname, remarks, gender, dob, address, category, contact, alternate, email, xp, xc, xb, xy, xiip, xiib, xiiy, cet, dpp, yod, sem1, sem2, sem3, sem4, sem5, semt5, sem6, semt6, sem7, semt7, pb, cb, eligible, gap, placed1, placed2, placed3, placed4]
             listremove = []  
             with open('studentData.csv', 'r', encoding="utf8") as f:
                 reader = csv.reader(f)
