@@ -1,2 +1,0 @@
-# TnP
-## Official TnP project

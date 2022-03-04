@@ -35,13 +35,20 @@ def studentprofile(request):
     if request.GET:
         roll = request.GET.get('id')
         enroll = request.GET.get('rollid')
-        with open('studentData.csv', encoding="utf8") as f:
+        with open('studentData.csv', 'r', encoding="utf8") as f:
             csv_reader = csv.reader(f)
             list = []
             for line in csv_reader:
                 if roll is not None and line[0] == roll:
                     list.append(line)
-            return render(request, 'details.html', {'data': list}) 
+                    return render(request, 'details.html', {'data': list})
+        with open('studentData.csv', 'r', encoding="utf8") as f:
+            csv_reader = csv.reader(f)
+            list = []
+            for line in csv_reader:
+                if enroll is not None and line[0] == enroll:
+                    list.append(line)
+                    return render(request, 'editdetails.html', {'data': list}) 
     if request.POST:
         name = request.POST.get('searchname')
         with open('studentData.csv', encoding="utf8") as f:
@@ -58,6 +65,12 @@ def profile(request):
 
 def studentlist(request):
     return render(request, 'studentlist.html')
+
+def editdetails(request):
+    return render(request, 'editdetails.html')
+
+def details(request):
+    return render(request, 'details.html')
 
 def editrecruiters(request):
     list = []
