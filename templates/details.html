@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Profile</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/24a476b79d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="font-family: Poppins; overflow-x: hidden; background-color: #f0f8ff">
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}"
+          >Training and Placement Cell</a
+        >
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'home' %}">
+              <button type="button" class="btn btn-light btn-sm">
+                BACK TO HOME
+              </button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'studentprofile' %}">
+              <button type="button" class="btn btn-light btn-sm">
+                SEARCH ANOTHER STUDENT
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      {% for student in data %}
+        <div class="card" style="margin-left: 20vw; margin-right: 20vw; margin-top: 10vh;">
+          <h5 class="card-header" style="background-color: #0d6efd; color: #FFFFFF">{{ student.2 }}</h5>
+          <div class="card-body">
+            <strong> Enrollment Number: </strong> {{student.0}} <br />
+            <strong> Branch: </strong> {{student.1}} <br />
+            <strong> Email: </strong> {{student.10}} <br />
+            <strong> Contact Number: </strong> {{student.8}} <br />
+            <strong> Gender: </strong> {{student.4}} <br />
+            <strong> Date of Birth: </strong> {{student.5}} <br />
+            <strong> Category: </strong> {{student.7}} <br />
+            <strong> Postal Address: </strong> {{student.6}} <br />
+            <strong> Xth Percentage: </strong> {{student.11}} <br />
+            <strong> XIIth Percentage: </strong> {{student.15}} <br />
+            <strong> Semester I Percentage: </strong> {{student.21}} <br />
+            <strong> Semester II Percentage: </strong> {{student.22}} <br />
+            <strong> Semester III Percentage: </strong> {{student.23}} <br />
+            <strong> Semester IV Percentage: </strong> {{student.24}} <br />
+            <strong> Pending Backlogs: </strong> {{student.31}} <br />
+            <strong> Placed at: </strong> TBD <br />
+            <form method="get">
+                <button class="btn btn-sm btn-primary" name="rollid" value={{student.0}} type="submit" style="margin-top: 10px">Edit Details</button>
+            </form>
+          </div>
+          </div>
+      {% endfor %}
+  </body>
+</html>

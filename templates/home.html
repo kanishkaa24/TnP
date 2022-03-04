@@ -1,0 +1,107 @@
+<!DOCTYPE html5>
+<html lang="en">
+  <head>
+    <title>Training and Placement</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/24a476b79d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    style="font-family: Poppins; overflow-x: hidden; background-color: #f0f8ff"
+  >
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}"
+          >Training and Placement Cell</a
+        >
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'recruiters' %}"
+              >RECRUITERS</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'studentprofile' %}"
+              >STUDENT PROFILE</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'studentlist' %}"
+              >STUDENT LIST</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div
+      class="row row-cols-1 row-cols-md-3 g-4"
+      style="margin-top: 10vh; margin-left: 2vw; margin-right: 2vw"
+    >
+      <div class="col">
+        <div class="card">
+          <img
+            src="https://media.istockphoto.com/vectors/human-resources-recruitment-concept-for-web-page-social-media-vector-vector-id1065103176?k=20&m=1065103176&s=612x612&w=0&h=jsccak3016NwgjI81KDDJubMUq5VI5oiyoWaD4nBsIw="
+            class="card-img-top"
+            style="height: 50vh"
+          />
+          <div class="card-body">
+            <h5 class="card-title">RECRUITERS</h5>
+            <p class="card-text">Update information about recruiters here.</p>
+            <a href="{% url 'addrecruiters' %}" class="btn btn-primary"
+              >Manage Recruiters</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            src="https://thumbs.dreamstime.com/b/blue-icon-person-blue-d-icon-person-isolated-white-background-126938394.jpg"
+            class="card-img-top"
+            style="height: 50vh"
+          />
+          <div class="card-body">
+            <h5 class="card-title">STUDENT PROFILE</h5>
+            <p class="card-text">
+              Update personal information about students here.
+            </p>
+            <a href="{% url 'studentprofile' %}" class="btn btn-primary"
+              >Manage Student Profile</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            src="https://i.dlpng.com/static/png/4039536-profile-icons-25040-free-vector-icons-png-pictures-free-600_564_preview.webp"
+            class="card-img-top"
+            style="height: 50vh"
+          />
+          <div class="card-body">
+            <h5 class="card-title">STUDENT LIST</h5>
+            <p class="card-text">Update information about offers here.</p>
+            <a href="{% url 'studentlist' %}" class="btn btn-primary"
+              >Manage Student List</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

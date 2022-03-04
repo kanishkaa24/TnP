@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit Recruiters</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/24a476b79d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="font-family: Poppins; overflow-x: hidden; background-color: #f0f8ff">
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}"
+          >Training and Placement Cell</a
+        >
+        <ul class="nav justify-content-end">
+          <li>
+            <a class="nav-link link-light" href="{% url 'recruiters' %}">
+              <button type="button" class="btn btn-light btn-sm">
+                SEE ALL RECRUITERS
+              </button>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link link-light" href="{% url 'addrecruiters' %}">
+              <button type="button" class="btn btn-light btn-sm">
+                ADD RECRUITERS
+              </button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'home' %}">
+              <button type="button" class="btn btn-light btn-sm">
+                BACK TO HOME
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    {% block content %}
+    <div class="card" style="width: 60vw; margin-left: 20vw; margin-top: 25vh">
+      <div
+        class="card-header"
+        style="background-color: #0d6efd; color: #ffffff"
+      >
+        EDIT RECRUITER INFORMATION
+      </div>
+      <div class="card-body">
+        <form
+      class="row g-3"
+      method="post"
+      action="/editrecruiters/"
+    >
+      {% csrf_token %}
+      <div class="col-md-4">
+        <label for="name" class="form-label">Name of the Company</label>
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="nameCompany"
+          required
+        >
+          <option selected>Select Company</option>
+          {% for company in data %}
+          <option>{{company.0}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="profile" class="form-label">Profile</label>
+        <input
+          name="profile"
+          id="profile"
+          class="form-control"
+          placeholder="Enter Profile"
+          required
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="package" class="form-label">Package Offered</label>
+        <input
+          name="package"
+          id="package"
+          type="content"
+          class="form-control"
+          placeholder="Enter Package Offered"
+          required
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="inputValue" class="form-label"
+          >Is this a dream company?</label
+        >
+        <select
+          id="dreamstate"
+          class="form-select"
+          name="dreamstate"
+          required
+        >
+          <option selected>Choose</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    </div>
+    {% endblock %}
+  </body>
+</html>
