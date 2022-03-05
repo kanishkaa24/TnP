@@ -124,6 +124,17 @@ def profile(request):
     return render(request, 'profile.html')
 
 def studentlist(request):
+    if request.POST:
+        cse = request.POST.get('cse')
+        it = request.POST.get('it')
+        ece = request.POST.get('ece')
+        eee = request.POST.get('eee')
+        ice = request.POST.get('ice')
+        ten = request.POST.get('ten')
+        twelve = request.POST.get('twelve')
+        diploma = request.POST.get('diploma')
+        gap = request.POST.get('gap')
+        backlog = request.POST.get('backlog')
     return render(request, 'studentlist.html')
 
 def editdetails(request):

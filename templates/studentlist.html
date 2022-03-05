@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>List</title>
+    <title>Profile</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +9,7 @@
     <link
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
-    />
+    /> 
     <script
       src="https://kit.fontawesome.com/24a476b79d.js"
       crossorigin="anonymous"
@@ -21,7 +21,9 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="font-family: Poppins; overflow-x: hidden">
+  <body
+    style="font-family: Poppins; overflow-x: hidden; background-color: #f0f8ff"
+  >
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}"
@@ -38,5 +40,138 @@
         </ul>
       </div>
     </nav>
+    <div
+      class="card"
+      style="margin-left: 20vw; margin-right: 20vw; margin-top: 10vh; margin-bottom: 10vh"
+    >
+      <h5 class="card-header" style="background-color: #0d6efd; color: #ffffff">
+        SET FILTERS
+      </h5>
+      <div style="margin-left:1vw">
+      {% block content %}
+      <div class="card-body">
+        <form class="row g-3" method="post" action="/studentlist/">
+          {% csrf_token %}
+          <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Branch</label>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="cse" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Computer Science and Engineering
+            </label>
+          </div>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="it" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Information Technology
+            </label>
+          </div>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="ece" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Electronics and Communication Engineering
+            </label>
+          </div>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="eee" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Electrical and Electronics Engineering
+            </label>
+          </div>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="ice" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Instrumentation and Control Engineering
+            </label>
+          </div>
+          <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Gender</label>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="male" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Male
+            </label>
+          </div>
+          <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="female" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Female
+            </label>
+          </div>
+          <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Category</label>
+          <div class="form-check col-md-3">
+            <input class="form-check-input" type="checkbox" name="gen" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              General
+            </label>
+          </div>
+          <div class="form-check col-md-3">
+            <input class="form-check-input" type="checkbox" name="sc" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              SC
+            </label>
+          </div>
+          <div class="form-check col-md-3">
+            <input class="form-check-input" type="checkbox" name="st" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              ST
+            </label>
+          </div>
+          <div class="form-check col-md-3">
+            <input class="form-check-input" type="checkbox" name="obc" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              OBC
+            </label>
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputEmail4" class="form-label" style="font-weight:bolder">Minimum 10th Percentage</label>
+            <input type="text" name="ten"  class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Minimum 12th Percentage</label>
+            <input type="text" name="twelve"  class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Minimum Diploma Percentage</label>
+            <input type="text" name="diploma"  class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Gap Years</label>
+            <input type="text" name="gap"  class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Pending Backlogs</label>
+            <input type="text" name="pbacklog"  class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Cleared Backlogs</label>
+            <input type="text" name="cbacklog"  class="form-control" id="inputPassword4">
+          </div>
+          <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Placed</label>
+          <div class="col-md-11">
+          <select class="form-select" aria-label="Placed" name="placedat">
+            <option selected>Select</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+        <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Placed at a Dream Company</label>
+          <div class="col-md-11">
+          <select class="form-select" aria-label="Placed" name="placedatdream">
+            <option selected>Select</option>
+            <option value="1">Yes</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+        <div class="col-md-4" style="margin-top: 25px">
+          <label for="inputPassword4" class="form-label" style="font-weight:bolder">Placed at</label>
+          <input type="text" name="companyPlaced"  class="form-control" id="inputPassword4">
+        </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">View List</button>
+          </div>
+        </div>
+        </form>
+        {% endblock %}
+      </div>
+    </div>
   </body>
 </html>
