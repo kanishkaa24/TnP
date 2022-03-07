@@ -130,12 +130,83 @@ def studentlist(request):
         ece = request.POST.get('ece')
         eee = request.POST.get('eee')
         ice = request.POST.get('ice')
-        ten = request.POST.get('ten')
-        twelve = request.POST.get('twelve')
-        diploma = request.POST.get('diploma')
-        gap = request.POST.get('gap')
-        backlog = request.POST.get('backlog')
+        ten = float(request.POST.get('ten'))
+        twelve = float(request.POST.get('twelve'))
+        diploma = float(request.POST.get('diploma'))
+        gap = float(request.POST.get('gap'))
+        backlog = float(request.POST.get('backlog'))
+        sem1 = float(request.POST.get('sem1'))
+        sem2 = float(request.POST.get('sem2'))
+        sem3 = float(request.POST.get('sem3'))
+        sem4 = float(request.POST.get('sem4'))
+        sem5 = float(request.POST.get('sem5'))
+        sem6 = float(request.POST.get('sem6'))
+        overall = float(request.POST.get('overall'))
+        gen = request.POST.get('gen')
+        sc = request.POST.get('sc')
+        st = request.POST.get('st')
+        obc = request.POST.get('obc')
+        placedat = request.POST.get('placedat')
+        male = request.POST.get('male')
+        female = request.POST.get('female')
+        genm = ""
+        if male:
+            genm = "MALE"
+        genf = ""
+        if female:
+            genm = "FEMALE"
+        catg = ""
+        if gen:
+            catg = "GENERAL"
+        catsc = ""
+        if sc:
+            catsc = "SC"
+        catst = ""
+        if st:
+            catst = "ST"
+        catobc = ""
+        if obc:
+            catobc = "OBC"
+        bcseI = ""
+        bcseII = ""
+        bitI = ""
+        bitII = ""
+        bice = ""
+        beceI = ""
+        beceII = ""
+        beceIII = ""
+        beee = ""
+        if cse:
+            bcseI = "Computer Sc. (Section I)"
+            bcseII = "Computer Sc. (Section II)"
+        if it:
+            bitI = "Information Tech. (Section I)"
+            bitII = "Information Tech. (Section II)"
+        if ice:
+            bice =  "Instrumentation & Control"
+        if eee:
+            beee = "Electrical & Electronics Engg."
+        if ece:
+            beceI = "Electronics & Eomm. Engg. (Section I)"
+            beceII = "Electronics & Eomm. Engg. (Section II)"
+            beceIII = "Electronics & Eomm. Engg. (Section III)"
+        with open('studentData.csv', encoding="utf8") as f:
+            csv_reader = csv.reader(f)
+            list = []
+            for line in csv_reader:
+                if(line[11]) != 'Xth%':
+                    if float(line[11]) >= ten and (float(line[15]) >= twelve or float(line[15]) == 0 ) and (float(line[19]) == 0 or float(line[19]) >= diploma) and float(line[21])>= sem1 and float(line[22]) >= sem2 and float(line[23]) >= sem3 and float(line[24]) >= sem4 and float(line[25]) >= sem5 and float(line[27]) >= sem6 and float(line[27]) >= overall and gap <= float(line[34]) and backlog <= float(line[31]) and (line[4] == genm or line[4] == genf) and (line[7] == catg or line[7] == catst or line[7] == catsc or line[7] == catobc) and (line[1] == bcseI or line[1] == bcseII or line[1] == bitI or line[1] == bitII or line[1] == bice or line[1] == beee or line[1] == beceI or line[1] == beceII or line[1] == beceIII):
+                        if placedat == "Yes":
+                            if(line[35] != "0"):
+                                list.append(line)
+                        elif placedat == "No": 
+                            if(line[35] == "0"):
+                                list.append(line)   
+        return render(request, 'list.html', {'data': list})
     return render(request, 'studentlist.html')
+
+def list(request):
+    return render(request, 'list.html')
 
 def editdetails(request):
     return render(request, 'editdetails.html')
