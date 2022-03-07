@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import csv
+import pandas as pd
 
 # Create your views here.
 def home(request):
@@ -190,9 +191,9 @@ def studentlist(request):
             beceI = "Electronics & Eomm. Engg. (Section I)"
             beceII = "Electronics & Eomm. Engg. (Section II)"
             beceIII = "Electronics & Eomm. Engg. (Section III)"
-        with open('studentData.csv', encoding="utf8") as f:
+        list = []
+        with open('studentData.csv', 'r', encoding="utf8") as f:
             csv_reader = csv.reader(f)
-            list = []
             for line in csv_reader:
                 if(line[11]) != 'Xth%':
                     if float(line[11]) >= ten and (float(line[15]) >= twelve or float(line[15]) == 0 ) and (float(line[19]) == 0 or float(line[19]) >= diploma) and float(line[21])>= sem1 and float(line[22]) >= sem2 and float(line[23]) >= sem3 and float(line[24]) >= sem4 and float(line[25]) >= sem5 and float(line[27]) >= sem6 and float(line[27]) >= overall and gap <= float(line[34]) and backlog <= float(line[31]) and (line[4] == genm or line[4] == genf) and (line[7] == catg or line[7] == catst or line[7] == catsc or line[7] == catobc) and (line[1] == bcseI or line[1] == bcseII or line[1] == bitI or line[1] == bitII or line[1] == bice or line[1] == beee or line[1] == beceI or line[1] == beceII or line[1] == beceIII):
@@ -201,7 +202,11 @@ def studentlist(request):
                                 list.append(line)
                         elif placedat == "No": 
                             if(line[35] == "0"):
-                                list.append(line)   
+                                list.append(line)
+        with open('studentDatanew.csv', 'w', encoding="utf8", newline='') as f:
+                writer = csv.writer(f)
+                for line in list:
+                    writer.writerow(line)
         return render(request, 'list.html', {'data': list})
     return render(request, 'studentlist.html')
 
