@@ -36,9 +36,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="{% url 'editrecruiters' %}">
+            <a class="nav-link link-light" href="{% url 'editrecruiters2022' %}">
               <button type="button" class="btn btn-light btn-sm">
-                EDIT RECRUITERS
+                EDIT 2022 RECRUITERS
+              </button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-light" href="{% url 'editrecruiters2023' %}">
+              <button type="button" class="btn btn-light btn-sm">
+                EDIT 2023 RECRUITERS
               </button>
             </a>
           </li>
@@ -52,11 +59,12 @@
         </ul>
       </div>
     </nav>
+    <div style="background-color: #0d6efd; color: #FFFFFF; width: 10vw; height: 40px; margin-top: 30px; border-radius: 5px; margin-left: 45vw; font-size: 20px; padding-top:5px; padding-left: 3.5vw">2022</div>
     <div
       class="row row-cols-1 row-cols-md-3 g-4"
       style="margin-right: 5vw; margin-left: 5vw"
     >
-      {% for company in data %}
+      {% for company in data2022 %}
       <div class="col">
         <div class="card" style="margin-top: 5vh ">
           <div class="card-header" style="background-color: #0d6efd; color: #FFFFFF">
@@ -77,5 +85,32 @@
       </div>
       {% endfor %}
     </div>
+    <div style="background-color: #0d6efd; color: #FFFFFF; width: 10vw; height: 40px; margin-top: 30px; border-radius: 5px; margin-left: 45vw; font-size: 20px; padding-top:5px; padding-left: 3.5vw">2023</div>
+    <div
+      class="row row-cols-1 row-cols-md-3 g-4"
+      style="margin-right: 5vw; margin-left: 5vw"
+    >
+      {% for company in data2023 %}
+      <div class="col">
+        <div class="card" style="margin-top: 5vh ">
+          <div class="card-header" style="background-color: #0d6efd; color: #FFFFFF">
+            <h5 style="font-weight: bolder; margin-bottom: 0">{{company.0}}</h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text" style="margin-bottom: 2px">
+              Profile: {{company.1}}
+            </p>
+            <p class="card-text" style="margin-bottom: 2px">
+              Package: {{company.2}}
+            </p>
+            <p class="card-text" style="margin-bottom: 2px">
+              Dream or not: {{company.3}}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="margin-bottom: 50px"></div>
   </body>
 </html>

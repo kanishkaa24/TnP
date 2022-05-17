@@ -39,6 +39,12 @@
           {% csrf_token %}
           <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Branch</label>
           <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="branch" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              All Branches
+            </label>
+          </div>
+          <div class="form-check col-md-4">
             <input class="form-check-input" type="checkbox" name="cse" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Computer Science and Engineering
@@ -70,6 +76,12 @@
           </div>
           <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Gender</label>
           <div class="form-check col-md-4">
+            <input class="form-check-input" type="checkbox" name="both" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Both
+            </label>
+          </div>
+          <div class="form-check col-md-4">
             <input class="form-check-input" type="checkbox" name="male" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Male
@@ -81,66 +93,17 @@
               Female
             </label>
           </div>
-          <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Category</label>
-          <div class="form-check col-md-3">
-            <input class="form-check-input" type="checkbox" name="gen" id="flexCheckDefault" name="gen">
-            <label class="form-check-label" for="flexCheckDefault">
-              General
-            </label>
-          </div>
-          <div class="form-check col-md-3">
-            <input class="form-check-input" type="checkbox" name="sc" id="flexCheckDefault" name="sc">
-            <label class="form-check-label" for="flexCheckDefault">
-              SC
-            </label>
-          </div>
-          <div class="form-check col-md-3">
-            <input class="form-check-input" type="checkbox" name="st" id="flexCheckDefault" name="st">
-            <label class="form-check-label" for="flexCheckDefault">
-              ST
-            </label>
-          </div>
-          <div class="form-check col-md-3">
-            <input class="form-check-input" type="checkbox" name="obc" id="flexCheckDefault" name="obc">
-            <label class="form-check-label" for="flexCheckDefault">
-              OBC
-            </label>
-          </div>
           <div class="col-md-4" style="margin-top: 25px">
             <label for="inputEmail4" class="form-label" style="font-weight:bolder">Minimum 10th Percentage</label>
-            <input type="number" name="ten" class="form-control" id="inputEmail4" value=0>
+            <input type="number" name="ten" class="form-control" id="inputEmail4" value=75>
           </div>
           <div class="col-md-4" style="margin-top: 25px">
             <label for="inputPassword4" class="form-label" style="font-weight:bolder">Minimum 12th Percentage</label>
-            <input type="number" name="twelve" class="form-control" id="inputPassword4" value=0>
+            <input type="number" name="twelve" class="form-control" id="inputPassword4" value=75>
           </div>
           <div class="col-md-4" style="margin-top: 25px">
             <label for="inputPassword4" class="form-label" style="font-weight:bolder">Minimum Diploma Percentage</label>
-            <input type="number" name="diploma" class="form-control" id="inputPassword4" value=0>
-          </div>
-          <div class="col-md-4">
-            <label for="inputEmail4" class="form-label" style="font-weight:bolder">Semester I Percentage</label>
-            <input name="sem1" type="number" class="form-control" id="inputEmail4" value=0>
-          </div>
-          <div class="col-md-4">
-            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Semester II Percentage</label>
-            <input name="sem2" type="number" class="form-control" id="inputPassword4" value=0>
-          </div>
-          <div class="col-md-4">
-            <label for="inputEmail4" class="form-label" style="font-weight:bolder">Semester III Percentage</label>
-            <input name="sem3" type="number" class="form-control" id="inputEmail4" value=0>
-          </div>
-          <div class="col-md-4">
-            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Semester IV Percentage</label>
-            <input name="sem4" type="number" class="form-control" id="inputPassword4" value=0>
-          </div>
-          <div class="col-md-4">
-            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Semester V Percentage</label>
-            <input name="sem5" type="number" class="form-control" id="inputPassword4" value=0>
-          </div>
-          <div class="col-md-4">
-            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Semester VI Percentage</label>
-            <input name="sem6" type="number" class="form-control" id="inputPassword4" value=0>
+            <input type="number" name="diploma" class="form-control" id="inputPassword4" value=75>
           </div>
           <div class="col-md-4" style="margin-top: 25px">
             <label for="inputPassword4" class="form-label" style="font-weight:bolder">Overall Percentage</label>
@@ -148,18 +111,32 @@
           </div>
           <div class="col-md-4" style="margin-top: 25px">
             <label for="inputPassword4" class="form-label" style="font-weight:bolder">Gap Years</label>
-            <input type="number" name="gap" class="form-control" id="inputPassword4" value=0>
+            <input type="number" name="gap" class="form-control" id="inputPassword4" value=5>
           </div>
           <div class="col-md-4" style="margin-top: 25px">
             <label for="inputPassword4" class="form-label" style="font-weight:bolder">Pending Backlogs</label>
             <input type="number" name="backlog" class="form-control" id="inputPassword4" value=0>
           </div>
-          <label for="exampleFormControlInput1" class="form-label" style="font-weight:bolder">Placed</label>
-          <div class="col-md-11">
-            <select class="form-select" aria-label="Placed" name="placedat">
-              <option value="Yes">Yes</option>
-              <option value="No" selected>No</option>
-            </select>
+          
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Include Placed at</label>
+            <input type="text" name="iplaced" class="form-control" id="inputPassword4" value="">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Exclude Placed at</label>
+            <input type="text" name="eplaced" class="form-control" id="inputPassword4" value="">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Received PPO or Dream Offer</label>
+            <input type="text" name="ppo" class="form-control" id="inputPassword4" value="No">
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Maximum Number of Companies Placed at</label>
+            <input type="number" name="mplaced" class="form-control" id="inputPassword4" value=6>
+          </div>
+          <div class="col-md-4" style="margin-top: 25px">
+            <label for="inputPassword4" class="form-label" style="font-weight:bolder">Maximum Number of Dream Attempts</label>
+            <input type="number" name="dattempt" class="form-control" id="inputPassword4" value=3>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary">View List</button>

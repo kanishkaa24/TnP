@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Add Recruiters</title>
+    <title>Edit Recruiters</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge ,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -35,17 +35,10 @@
               </button>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="{% url 'editrecruiters2022' %}">
+          <li>
+            <a class="nav-link link-light" href="{% url 'addrecruiters' %}">
               <button type="button" class="btn btn-light btn-sm">
-                EDIT 2022 RECRUITERS
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="{% url 'editrecruiters2023' %}">
-              <button type="button" class="btn btn-light btn-sm">
-                EDIT 2023 RECRUITERS
+                ADD RECRUITERS
               </button>
             </a>
           </li>
@@ -60,56 +53,42 @@
       </div>
     </nav>
     {% block content %}
-    
     <div class="card" style="width: 60vw; margin-left: 20vw; margin-top: 25vh">
       <div
         class="card-header"
         style="background-color: #0d6efd; color: #ffffff"
       >
-        ADD RECRUITER
+        EDIT RECRUITER INFORMATION
       </div>
       <div class="card-body">
         <form
       class="row g-3"
       method="post"
-      action="/addrecruiters/"
+      action="/editrecruiters2022/"
     >
       {% csrf_token %}
       <div class="col-md-4">
-        <label for="year" class="form-label">Year</label>
-        <input
-          name="year"
-          id="year"
-          type="content"
-          class="form-control"
-          placeholder="Enter Year"
-          required
-          autocomplete="false"
-          display="hidden"
-        />
-      </div>
-      <div class="col-md-4">
         <label for="name" class="form-label">Name of the Company</label>
-        <input
-          name="nameof"
-          id="nameof"
-          type="text"
-          class="form-control"
-          placeholder="Enter Name"
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="nameCompany"
           required
-        />
+        >
+          <option selected>Select Company</option>
+          {% for company in data %}
+          <option>{{company.0}}</option>
+          {% endfor %}
+        </select>
       </div>
       <div class="col-md-4">
         <label for="profile" class="form-label">Profile</label>
         <input
           name="profile"
           id="profile"
-          type="content"
           class="form-control"
           placeholder="Enter Profile"
           required
-          autocomplete="false"
-          display="hidden"
         />
       </div>
       <div class="col-md-4">
@@ -121,8 +100,6 @@
           class="form-control"
           placeholder="Enter Package Offered"
           required
-          autocomplete="false"
-          display="hidden"
         />
       </div>
       <div class="col-md-4">
@@ -130,13 +107,10 @@
           >Is this a dream company?</label
         >
         <select
-          id="inputState"
+          id="dreamstate"
           class="form-select"
           name="dreamstate"
-          id="dreamstate"
           required
-          autocomplete="false"
-          display="hidden"
         >
           <option selected>Choose</option>
           <option>Yes</option>
@@ -147,6 +121,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
+    </div>
     {% endblock %}
   </body>
 </html>

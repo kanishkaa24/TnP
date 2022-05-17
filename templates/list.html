@@ -13,7 +13,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 </head>
 
-<body style="font-family: Poppins; background-color: #f0f8ff; width: 250vw">
+<body style="font-family: Poppins; background-color: #f0f8ff; width: 210vw">
   <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">Training and Placement Cell</a>
@@ -35,7 +35,7 @@
       </ul>
     </div>
   </nav>
-  <div class="card" style="margin-left: 2vw; margin-right: 2vw; width: 246vw; margin-top: 10vh; margin-bottom: 10vh">
+  <div class="card" style="margin-left: 2vw; margin-right: 2vw; width: 206vw; margin-top: 10vh; margin-bottom: 10vh">
     <h5 class="card-header" style="background-color: #0d6efd; color: #ffffff">
       STUDENT LIST
     </h5>
@@ -45,7 +45,7 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Enrollment Number</th>
+                <th scope="col">Roll Number</th>
                 <th scope="col">Name</th>
                 <th scope="col">Branch</th>
                 <th scope="col">Contact Number</th>
@@ -56,14 +56,8 @@
                 <th scope="col">10th Percentage</th>
                 <th scope="col">12th Percentage</th>
                 <th scope="col">Diploma Percentage</th>
-                <th scope="col">Semester I Percentage</th>
-                <th scope="col">Semester II Percentage</th>
-                <th scope="col">Semester III Percentage</th>
-                <th scope="col">Semester IV Percentage</th>
-                <th scope="col">Semester V Percentage</th>
-                <th scope="col">Semester VI Percentage</th>
                 <th scope="col">Overall Percentage</th>
-                <th scope="col">Pending Blocks</th>
+                <th scope="col">Pending Backlogs</th>
                 <th scope="col">Gap in Studies</th>
               </tr>
             </thead>
@@ -72,7 +66,7 @@
               <tr>
                 <td>{{item.0}}</td>
                 <td>{{item.2}}</td>
-                <td>{{item.1}}</td>
+                <td>{{item.3}}</td>
                 <td>{{item.8}}</td>
                 <td>{{item.10}}</td>
                 <td>{{item.7}}</td>
@@ -81,15 +75,9 @@
                 <td>{{item.11}}</td>
                 <td>{{item.15}}</td>
                 <td>{{item.19}}</td>
-                <td>{{item.21}}</td>
-                <td>{{item.22}}</td>
-                <td>{{item.23}}</td>
-                <td>{{item.24}}</td>
-                <td>{{item.25}}</td>
-                <td>{{item.27}}</td>
-                <td>{{item.28}}</td>
                 <td>{{item.31}}</td>
-                <td>{{item.34}}</td>
+                <td>{{item.32}}</td>
+                <td>{{item.35}}</td>
               </tr>
               {% endfor %}
             </tbody>
